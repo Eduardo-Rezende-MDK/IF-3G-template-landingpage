@@ -89,7 +89,12 @@ async function prerender() {
   const rootPlaceholder = '<div id="root"></div>';
   if (!html.includes(rootPlaceholder))
     throw new Error('Placeholder <div id="root"></div> não encontrado.');
-  html = html.replace(rootPlaceholder, `<div id="root">${appHtml}</div>`);
+  const normalizedAppHtml = appHtml
+    .replace(/src="\/assets\//g, 'src="./assets/')
+    .replace(/href="\/assets\//g, 'href="./assets/')
+    .replace(/src='\/assets\//g, "src='./assets/")
+    .replace(/href='\/assets\//g, "href='./assets/");
+  html = html.replace(rootPlaceholder, `<div id="root">${normalizedAppHtml}</div>`);
 
   const replacements = {
     __LANDING_LANG__: config.seo.lang,
