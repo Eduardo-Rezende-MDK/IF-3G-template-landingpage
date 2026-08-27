@@ -1,20 +1,16 @@
 import { useEffect } from "react";
-import { Header } from "@/components/landing/Header";
-import { Hero } from "@/components/landing/Hero";
-import { ProductGrid } from "@/components/landing/ProductGrid";
-import { Applications } from "@/components/landing/Applications";
-import { HowToBuy } from "@/components/landing/HowToBuy";
-import { Stats } from "@/components/landing/Stats";
-import { Faq } from "@/components/landing/Faq";
-import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
+import { Header } from "@/components/landing/Header";
+import { SectionRenderer } from "@/components/landing/SectionRenderer";
+import { landingConfig, VIEW_EVENT } from "@/data/landing";
 import { track } from "@/lib/analytics";
 
 export default function App() {
   useEffect(() => {
-    if (sessionStorage.getItem("view_landing_mussarela") === "1") return;
-    sessionStorage.setItem("view_landing_mussarela", "1");
-    track("view_landing_mussarela", { page_location: window.location.href });
+    const sessionKey = `${VIEW_EVENT}:sent`;
+    if (sessionStorage.getItem(sessionKey) === "1") return;
+    sessionStorage.setItem(sessionKey, "1");
+    track(VIEW_EVENT, { page_location: window.location.href });
   }, []);
 
   return (
@@ -27,13 +23,9 @@ export default function App() {
       </a>
       <Header />
       <main id="conteudo">
-        <Hero />
-        <ProductGrid />
-        <Applications />
-        <HowToBuy />
-        <Stats />
-        <Faq />
-        <FinalCta />
+        {landingConfig.sections.map((section) => (
+          <SectionRenderer key={section.id} section={section} />
+        ))}
       </main>
       <Footer />
     </>

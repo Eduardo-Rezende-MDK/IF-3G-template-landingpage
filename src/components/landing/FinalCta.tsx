@@ -1,17 +1,17 @@
 import { CtaLink } from "./CtaLink";
-import { CATEGORY_URL } from "@/data/landing";
+import { CATEGORY_URL, finalCta } from "@/data/landing";
 
 export function FinalCta() {
   return (
-    <section className="border-y border-border bg-surface py-14 lg:py-20" aria-labelledby="cta-final-title">
+    <section
+      className="border-y border-border bg-surface py-14 lg:py-20"
+      aria-labelledby="cta-final-title"
+    >
       <div className="container-page max-w-3xl text-center">
         <h2 id="cta-final-title" className="text-3xl font-bold sm:text-4xl">
-          Pronto para abastecer a sua operação?
+          {finalCta.title}
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Veja as opções de mussarela, confirme o atendimento na sua região e conclua o pedido
-          online na loja oficial da 3G Foods.
-        </p>
+        <p className="mt-4 text-lg text-muted-foreground">{finalCta.description}</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <CtaLink
             href={CATEGORY_URL}
@@ -20,12 +20,10 @@ export function FinalCta() {
             destinationType="category"
             size="lg"
           >
-            Comprar agora
+            {finalCta.cta}
           </CtaLink>
         </div>
-        <p className="mt-5 text-sm text-muted-foreground">
-          Atendimento para empresas | Consulte regiões e condições de entrega
-        </p>
+        <p className="mt-5 text-sm text-muted-foreground">{finalCta.microcopy}</p>
       </div>
     </section>
   );

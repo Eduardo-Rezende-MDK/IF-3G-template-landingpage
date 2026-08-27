@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { CtaLink } from "./CtaLink";
 import { track } from "@/lib/analytics";
-import { CATEGORY_URL, products } from "@/data/landing";
+import { CATEGORY_URL, products, productSection } from "@/data/landing";
 
 export function ProductGrid() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -17,7 +17,7 @@ export function ProductGrid() {
           if (entry.isIntersecting && !fired.current) {
             fired.current = true;
             track("view_item_list", {
-              item_list_name: "Mussarelas food service",
+              item_list_name: productSection.listName,
               items: products.map((product, index) => ({
                 item_id: product.product_id,
                 item_name: product.name,
@@ -37,19 +37,16 @@ export function ProductGrid() {
 
   return (
     <section
-      id="mussarelas"
+      id={productSection.anchorId}
       ref={sectionRef}
       className="scroll-mt-20 py-14 lg:py-20"
       aria-labelledby="grelha-title"
     >
       <div className="container-page">
         <h2 id="grelha-title" className="max-w-2xl text-3xl font-bold sm:text-4xl">
-          Mussarelas disponíveis na loja 3G Foods
+          {productSection.title}
         </h2>
-        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          Preços por quilo conforme a loja oficial. Sujeitos a alteração, disponibilidade e
-          confirmação por CEP.
-        </p>
+        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{productSection.description}</p>
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product, index) => (
@@ -69,11 +66,11 @@ export function ProductGrid() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-5">
-                <span className="eyebrow text-muted-foreground">Frios e laticínios</span>
+                <span className="eyebrow text-muted-foreground">
+                  {productSection.categoryLabel}
+                </span>
                 <h3 className="mt-2 text-lg font-bold">{product.name}</h3>
-                <p className="mt-3 text-2xl font-extrabold text-foreground">
-                  {product.priceLabel}
-                </p>
+                <p className="mt-3 text-2xl font-extrabold text-foreground">{product.priceLabel}</p>
                 <CtaLink
                   href={product.destinationUrl}
                   ctaName={product.trackingLabel}
@@ -91,7 +88,7 @@ export function ProductGrid() {
                   }}
                   className="mt-5 w-full"
                 >
-                  Comprar
+                  {productSection.cardCta}
                 </CtaLink>
               </div>
             </li>
@@ -99,16 +96,14 @@ export function ProductGrid() {
         </ul>
 
         <div className="mt-10 flex flex-col items-start gap-3 rounded-xl border border-border bg-surface p-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-base text-muted-foreground">
-            Quer ver o catálogo completo de laticínios e frios da 3G Foods?
-          </p>
+          <p className="text-base text-muted-foreground">{productSection.catalogCopy}</p>
           <CtaLink
             href={CATEGORY_URL}
-            ctaName="ver_categoria_pos_grelha"
+            ctaName={`ver_categoria_${productSection.anchorId}_pos_grelha`}
             ctaLocation="after_grid"
             destinationType="category"
           >
-            Ver na loja
+            {productSection.catalogCta}
           </CtaLink>
         </div>
       </div>

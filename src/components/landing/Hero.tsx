@@ -1,4 +1,3 @@
-import heroPizzaria from "@/assets/hero-pizzaria.jpg";
 import { CtaLink } from "./CtaLink";
 import { CATEGORY_URL, hero } from "@/data/landing";
 
@@ -6,8 +5,8 @@ export function Hero() {
   return (
     <section className="relative isolate bg-ink" aria-labelledby="hero-title">
       <img
-        src={heroPizzaria}
-        alt="Pizzaria artesanal com forno a lenho, mussarela fresca e pizza margherita"
+        src={hero.image}
+        alt={hero.imageAlt}
         width={1920}
         height={1088}
         fetchPriority="high"
@@ -34,7 +33,7 @@ export function Hero() {
           <p className="mt-6 max-w-xl text-lg text-ink-foreground/80">{hero.subheadline}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <CtaLink
-              href="#mussarelas"
+              href={`#${hero.anchorId}`}
               ctaName={hero.ctaPrimary}
               ctaLocation="hero"
               destinationType="anchor"
