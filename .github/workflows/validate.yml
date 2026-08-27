@@ -1,0 +1,30 @@
+name: Validar landing page
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do template/campanha
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Validar e compilar landing SSG
+        run: npm run build
+
+      - name: Verificar artefactos de publicação
+        run: test -f dist/index.html && test -d dist/assets
