@@ -1,6 +1,5 @@
-import logoBranco from "@/assets/logos/logo_horizontal-branco.png";
 import { CtaLink } from "./CtaLink";
-import { CATEGORY_URL, SIGNUP_URL, STORE_URL } from "@/data/landing";
+import { assets, CATEGORY_URL, SIGNUP_URL, STORE_URL, footer } from "@/data/landing";
 
 export function Footer() {
   return (
@@ -8,7 +7,7 @@ export function Footer() {
       <div className="container-page flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-sm">
           <img
-            src={logoBranco}
+            src={assets.logoWhite}
             alt="3G Foods Distribuidora Food Service"
             width={168}
             height={48}
@@ -16,10 +15,7 @@ export function Footer() {
             loading="lazy"
             decoding="async"
           />
-          <p className="mt-4 text-sm text-ink-foreground/80">
-            Distribuidora food service que atende negócios de alimentação no Estado de São Paulo.
-            Disponibilidade, preço e condições de entrega são confirmados por CEP.
-          </p>
+          <p className="mt-4 text-sm text-ink-foreground/80">{footer.description}</p>
         </div>
         <nav aria-label="Links úteis" className="flex flex-col gap-2 text-sm">
           <CtaLink
@@ -34,13 +30,13 @@ export function Footer() {
           </CtaLink>
           <CtaLink
             href={CATEGORY_URL}
-            ctaName="footer_categoria"
+            ctaName={footer.categoryCtaName}
             ctaLocation="footer"
             destinationType="category"
             variant="quiet"
             className="text-brand justify-start"
           >
-            Mussarela e laticínios
+            {footer.categoryLabel}
           </CtaLink>
           <CtaLink
             href={SIGNUP_URL}

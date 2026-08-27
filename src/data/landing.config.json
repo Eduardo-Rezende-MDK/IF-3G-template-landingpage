@@ -8,6 +8,10 @@
   "categoryUrl": "https://loja.3gfoods.com.br/busca/1?termo=mussarela",
   "signupUrl": "https://loja.3gfoods.com.br/",
   "canonicalUrl": "https://loja.3gfoods.com.br/ads/mussarela-atacado-sp-campinas",
+  "assets": {
+    "logoColor": "https://loja.3gfoods.com.br/assets/media/logo_horizontal-color.png",
+    "logoWhite": "https://loja.3gfoods.com.br/assets/media/logo_horizontal-branco.png"
+  },
   "seo": {
     "title": "Mussarela no Atacado para Food Service | 3G Foods",
     "description": "Encontre mussarela para pizzarias, restaurantes, lanchonetes, padarias e outros negócios. Consulte opções, disponibilidade e compre com a 3G Foods em SP e Campinas.",
@@ -22,7 +26,10 @@
     "subheadline": "Encontre opções para pizzarias, restaurantes, lanchonetes, padarias, mercados e cozinhas profissionais. Compre online ou fale com a equipe da 3G Foods para consultar disponibilidade e atendimento na sua região.",
     "ctaPrimary": "Ver mussarelas disponíveis",
     "ctaSecondary": "Comprar agora",
-    "microcopy": "Atendimento para empresas | Consulte regiões e condições de entrega"
+    "microcopy": "Atendimento para empresas | Consulte regiões e condições de entrega",
+    "image": "https://loja.3gfoods.com.br/assets/media/logo_horizontal-color.png",
+    "imageAlt": "3G Foods Distribuidora Food Service",
+    "anchorId": "mussarelas"
   },
   "products": [
     {
@@ -86,6 +93,16 @@
       "trackingLabel": "card_mussarela_minasa"
     }
   ],
+  "productSection": {
+    "anchorId": "mussarelas",
+    "title": "Mussarelas disponíveis na loja 3G Foods",
+    "description": "Preços por quilo conforme a loja oficial. Sujeitos a alteração, disponibilidade e confirmação por CEP.",
+    "categoryLabel": "Frios e laticínios",
+    "catalogCopy": "Quer ver o catálogo completo de laticínios e frios da 3G Foods?",
+    "catalogCta": "Ver na loja",
+    "listName": "Mussarelas food service",
+    "cardCta": "Comprar"
+  },
   "applications": [
     {
       "title": "Pizzarias",
@@ -144,6 +161,21 @@
     { "value": "6 mil m²", "label": "de espaço logístico" },
     { "value": "2 mil t", "label": "distribuídas por mês" }
   ],
+  "faqSection": {
+    "title": "Dúvidas sobre mussarela no atacado",
+    "description": "Informações rápidas para orientar a compra na loja."
+  },
+  "finalCta": {
+    "title": "Pronto para abastecer a sua operação?",
+    "description": "Veja as opções de mussarela, confirme o atendimento na sua região e conclua o pedido online na loja oficial da 3G Foods.",
+    "cta": "Comprar agora",
+    "microcopy": "Atendimento para empresas | Consulte regiões e condições de entrega"
+  },
+  "footer": {
+    "description": "Distribuidora food service que atende negócios de alimentação no Estado de São Paulo. Disponibilidade, preço e condições de entrega são confirmados por CEP.",
+    "categoryLabel": "Mussarela e laticínios",
+    "categoryCtaName": "footer_categoria"
+  },
   "faq": [
     {
       "q": "A 3G Foods vende mussarela no atacado?",

@@ -16,6 +16,9 @@ export type HeroConfig = {
   ctaPrimary: string;
   ctaSecondary: string;
   microcopy: string;
+  image: string;
+  imageAlt: string;
+  anchorId: string;
 };
 
 export type Product = {
@@ -53,8 +56,13 @@ export const STORE_URL = config.storeUrl;
 export const CATEGORY_URL = config.categoryUrl;
 export const SIGNUP_URL = config.signupUrl;
 export const CANONICAL_URL = config.canonicalUrl;
+export const assets = config.assets;
 export const seo: SeoConfig = config.seo;
 export const hero: HeroConfig = config.hero;
+export const productSection = config.productSection;
+export const faqSection = config.faqSection;
+export const finalCta = config.finalCta;
+export const footer = config.footer;
 export const applications = config.applications;
 export const reasons = config.reasons;
 export const steps = config.steps;

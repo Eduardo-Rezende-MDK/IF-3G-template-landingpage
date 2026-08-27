@@ -1,6 +1,5 @@
-import logoAmarelo from "@/assets/logos/logo_horizontal-color.png";
 import { CtaLink } from "./CtaLink";
-import { CATEGORY_URL } from "@/data/landing";
+import { assets, CATEGORY_URL } from "@/data/landing";
 
 export function TrustBar() {
   return (
@@ -22,7 +21,7 @@ export function Header() {
       <div className="container-page flex h-20 items-center justify-between gap-4">
         <a href="#conteudo" className="flex items-center" aria-label="3G Foods, página inicial">
           <img
-            src={logoAmarelo}
+            src={assets.logoColor}
             alt="3G Foods Distribuidora Food Service"
             width={252}
             height={72}
