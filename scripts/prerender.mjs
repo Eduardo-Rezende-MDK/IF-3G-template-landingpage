@@ -28,7 +28,7 @@ async function prerender() {
   const App = appModule.default || appModule;
 
   // 2. Renderiza o App para HTML estático
-  const appHtml = renderToString(React.createElement(App));
+  let appHtml = renderToString(React.createElement(App));
   console.log(`✅ [SSG Prerender] Componente <App /> renderizado com sucesso (${appHtml.length} caracteres).`);
 
   // 3. Lê o index.html gerado pelo Vite
@@ -39,6 +39,14 @@ async function prerender() {
   if (!html.includes(rootPlaceholder)) {
     throw new Error('Placeholder <div id="root"></div> não encontrado no index.html.');
   }
+
+  // 4. Normaliza caminhos de assets gerados pelo SSR para caminhos relativos (./assets/...)
+  // Isso é essencial para subpastas de produção como /ads/[slug]/
+  appHtml = appHtml
+    .replace(/src="\/assets\//g, 'src="./assets/')
+    .replace(/href="\/assets\//g, 'href="./assets/')
+    .replace(/src='\/assets\//g, "src='./assets/")
+    .replace(/href='\/assets\//g, "href='./assets/");
 
   html = html.replace(rootPlaceholder, `<div id="root">${appHtml}</div>`);
 
