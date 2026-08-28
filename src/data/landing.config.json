@@ -6,7 +6,8 @@
   "gtmContainerId": "GTM-PNBB7STW",
   "storeUrl": "https://loja.3gfoods.com.br/",
   "categoryUrl": "https://loja.3gfoods.com.br/busca/1?termo=mussarela",
-  "signupUrl": "https://loja.3gfoods.com.br/",
+  "signupUrl": "https://loja.3gfoods.com.br/cadastro",
+  "cepUrl": "https://loja.3gfoods.com.br/?cep=1",
   "canonicalUrl": "https://loja.3gfoods.com.br/ads/mussarela-atacado-sp-campinas",
   "assets": {
     "logoColor": "https://loja.3gfoods.com.br/assets/media/logo_horizontal-color.png",
@@ -27,7 +28,8 @@
     "ctaPrimary": "Ver mussarelas disponíveis",
     "ctaSecondary": "Comprar agora",
     "microcopy": "Atendimento para empresas | Consulte regiões e condições de entrega",
-    "image": "https://loja.3gfoods.com.br/assets/media/logo_horizontal-color.png",
+    "image": "./assets/hero_desktop.jpg",
+    "imageMobile": "./assets/hero_mobile.jpg",
     "imageAlt": "3G Foods Distribuidora Food Service",
     "anchorId": "mussarelas"
   },

@@ -1,5 +1,5 @@
 import { CtaLink } from "./CtaLink";
-import { CATEGORY_URL, SIGNUP_URL, steps } from "@/data/landing";
+import { CEP_URL, SIGNUP_URL, steps } from "@/data/landing";
 
 export function HowToBuy() {
   return (
@@ -28,7 +28,7 @@ export function HowToBuy() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <CtaLink
-            href={CATEGORY_URL}
+            href={CEP_URL}
             ctaName="consultar_cep"
             ctaLocation="how_to_buy"
             destinationType="store"

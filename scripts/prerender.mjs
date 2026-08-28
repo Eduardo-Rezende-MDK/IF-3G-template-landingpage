@@ -93,7 +93,11 @@ async function prerender() {
     .replace(/src="\/assets\//g, 'src="./assets/')
     .replace(/href="\/assets\//g, 'href="./assets/')
     .replace(/src='\/assets\//g, "src='./assets/")
-    .replace(/href='\/assets\//g, "href='./assets/");
+    .replace(/href='\/assets\//g, "href='./assets/")
+    .replace(/srcSet="\/assets\//g, 'srcSet="./assets/')
+    .replace(/srcset="\/assets\//g, 'srcset="./assets/')
+    .replace(/srcSet='\/assets\//g, "srcSet='./assets/")
+    .replace(/srcset='\/assets\//g, "srcset='./assets/");
   html = html.replace(rootPlaceholder, `<div id="root">${normalizedAppHtml}</div>`);
 
   const replacements = {

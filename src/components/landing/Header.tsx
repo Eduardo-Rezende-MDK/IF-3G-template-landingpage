@@ -19,7 +19,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-ink text-ink-foreground">
       <div className="container-page flex h-20 items-center justify-between gap-4">
-        <a href="#conteudo" className="flex items-center" aria-label="3G Foods, página inicial">
+        <a href="https://loja.3gfoods.com.br/" className="flex items-center" aria-label="3G Foods, página inicial">
           <img
             src={assets.logoColor}
             alt="3G Foods Distribuidora Food Service"

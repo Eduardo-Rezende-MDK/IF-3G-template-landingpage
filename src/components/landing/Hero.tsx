@@ -4,15 +4,18 @@ import { CATEGORY_URL, hero } from "@/data/landing";
 export function Hero() {
   return (
     <section className="relative isolate bg-ink" aria-labelledby="hero-title">
-      <img
-        src={hero.image}
-        alt={hero.imageAlt}
-        width={1920}
-        height={1088}
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+      <picture>
+        {hero.imageMobile ? <source media="(max-width: 767px)" srcSet={hero.imageMobile} /> : null}
+        <img
+          src={hero.image}
+          alt={hero.imageAlt}
+          width={1920}
+          height={1088}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </picture>
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30"

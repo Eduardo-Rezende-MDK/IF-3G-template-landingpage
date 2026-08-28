@@ -17,6 +17,7 @@ export type HeroConfig = {
   ctaSecondary: string;
   microcopy: string;
   image: string;
+  imageMobile?: string;
   imageAlt: string;
   anchorId: string;
 };
@@ -55,6 +56,7 @@ export const GTM_CONTAINER_ID = config.gtmContainerId;
 export const STORE_URL = config.storeUrl;
 export const CATEGORY_URL = config.categoryUrl;
 export const SIGNUP_URL = config.signupUrl;
+export const CEP_URL = config.cepUrl;
 export const CANONICAL_URL = config.canonicalUrl;
 export const assets = config.assets;
 export const seo: SeoConfig = config.seo;
